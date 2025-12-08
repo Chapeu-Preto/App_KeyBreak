@@ -8,6 +8,12 @@ node_modules/
 dist/
 web-build/
 expo-env.d.ts
+.expo-shared/
+
+# Logs
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 
 # Native
 .kotlin/
@@ -36,8 +42,34 @@ yarn-error.*
 # typescript
 *.tsbuildinfo
 
-app-example
-
 # generated native folders
 /ios
 /android
+
+# Build folders
+android/build/
+ios/build/
+ios/Pods/
+dist/
+build/
+
+# Expo environment variables
+.env
+.env.local
+.env.*.local
+
+# Temporary files
+*.tmp
+*.swp
+
+# Editor directories
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Metro bundler cache
+metro-cache/
+
+# React Native Packager cache
+*.bundle
