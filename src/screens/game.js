@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from "react";
-import { Animated, Image, Text, TextInput, TouchableOpacity, View, StyleSheet } from "react-native";
+import { Animated, Image, Text, TextInput, TouchableOpacity, View, StyleSheet, Platform } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import { KeyboardAvoidingView } from "react-native";
 
 export default function Game() {
   const navigation = useNavigation();
@@ -111,7 +112,10 @@ export default function Game() {
   }
 
   return (
-    <View style={styles.container}>
+    <KeyboardAvoidingView 
+      style={styles.container}
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
+    >
       <Image 
         source={require("../../assets/imagens/cadeadoRed.png")} 
         style={styles.image}
@@ -156,7 +160,7 @@ export default function Game() {
       >
         {message}
       </Text>
-    </View>
+    </KeyboardAvoidingView>
   );
 }
 
@@ -213,6 +217,7 @@ const styles = StyleSheet.create({
 
     message: {
         marginTop: 20,
+        marginBottom: 40,
         fontSize: 18,
         color: '#fff',
         textAlign: 'center',
